@@ -22,7 +22,7 @@ return new class() extends Migration
             $table->string('capital')->nullable()->comment('Capital city of the country.');
             $table->string('iso_alpha_2', 10)->comment('ISO 3166-1 alpha-2 code (e.g., "US" for the United States).');
             $table->string('iso_alpha_3', 10)->comment('ISO 3166-1 alpha-3 code (e.g., "USA" for the United States).');
-            $table->smallInteger('iso_numeric')->nullable()->comment('ISO 3166-1 numeric code for the country.');
+            $table->string('iso_numeric', 5)->nullable()->comment('ISO 3166-1 numeric code for the country.');
 
             $table->string('international_phone', 150)->nullable()->comment('International dialing code (e.g., +1 for the United States).');
             $table->string('geoname_id', 10)->nullable()->comment('Geonames ID for geographical reference.');
