@@ -138,6 +138,39 @@ class Country extends CountryModel
     ];
 
     /**
+     * The attributes that should be cast.
+     *
+     * This section is particularly important due to limitations introduced in Laravel 10.
+     * Laravel 10 requires specific handling of attributes to ensure proper type casting
+     * and avoid issues such as "Array to string conversion."
+     *
+     * @var array
+     */
+    protected $casts = [
+        'languages' => 'array',
+        'tld' => 'array',
+        'alternative_tld' => 'array',
+        'borders' => 'array',
+        'timezones' => 'array',
+        'currency' => 'array',
+
+        'flag_emoji' => 'array',
+        'flag_colors' => 'array',
+        'flag_colors_web' => 'array',
+        'flag_colors_contrast' => 'array',
+        'flag_colors_hex' => 'array',
+        'flag_colors_rgb' => 'array',
+        'flag_colors_cmyk' => 'array',
+        'flag_colors_hsl' => 'array',
+        'flag_colors_hsv' => 'array',
+        'flag_colors_pantone' => 'array',
+
+        'independence_day' => 'date:Y-m-d',
+
+        'is_visible' => 'boolean',
+    ];
+
+    /**
      * Get the attributes that should be cast.
      *
      * @return array<string, string>
