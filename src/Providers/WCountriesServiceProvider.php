@@ -14,7 +14,9 @@ class WCountriesServiceProvider extends PackageServiceProvider
 {
     public function configurePackage(Package $package): void
     {
+
         $package
+            ->setBasePath(__DIR__)
             ->name('lwwcas-countries')
             ->hasConfigFile('w-countries')
             ->hasMigrations([
