@@ -24,8 +24,11 @@ The following table outlines the compatibility of the **Laravel Countries** pack
 
 | Package Version | Laravel   |  Status |
 |-----------------|----------|--------------|
-| 4.11.x.x        | 11       |  ✅
 | 4.11.x.x        | 10       |  ✅
+| 4.11.x.x        | 11       |  ✅
+| 4.12.x.x        | 10       |  ✅
+| 4.12.x.x        | 11       |  ✅
+| 4.12.x.x        | 12       |  ✅
 
 ## Requirements
 
@@ -33,13 +36,13 @@ The **Laravel Countries** package has the following system and package requireme
 
 ### Runtime Requirements (Production)
 
-- **PHP**: The package supports PHP versions **^8.0**, **^8.1**, and **^8.2**, ensuring compatibility with modern PHP versions.
+- **PHP**: The package supports PHP versions **^8.2**, and **^8.3**, ensuring compatibility with modern PHP versions.
 
-- **Laravel Framework**: Compatible with Laravel versions **^9.0**, **^10.0**, and **^11.0**. This ensures that the package can be used with the most up-to-date releases of the Laravel framework.
+- **Laravel Framework**: Compatible with Laravel versions **^10.x**, **^11.x**, and **^12.x**. This ensures that the package can be used with the most up-to-date releases of the Laravel framework.
 
 - **Astrotomic Laravel Translatable**: Requires version **^11.8** of the **Astrotomic Laravel Translatable** package for multilingual support in the application.
 
-- **Spatie Laravel Package Tools**: Requires version **^1.16.0** of **Spatie's Laravel Package Tools** to assist in the package setup and management.
+- **Spatie Laravel Package Tools**: Requires version **^1.92.x** of **Spatie's Laravel Package Tools** to assist in the package setup and management.
 
 ### Development Requirements
 
