@@ -32,7 +32,49 @@ trait WithBasePackageTools
      *
      * @var string
      */
-    protected string $withEnd = 'You do not find the happy life. You make it.';
+    protected string|null $withEnd = null;
+
+
+    /**
+     * Array of motivational phrases.
+     *
+     * @var string[]
+     */
+    protected array $withRandomEnd = [
+        'Believe in your power to make a difference.',
+        'Every step forward is a step closer to your dreams.',
+        'Challenges are opportunities in disguise.',
+        'Your journey is yours to create.',
+        'Great things take time, so keep going.',
+        'The effort you put in today builds your tomorrow.',
+        'Dreams become reality with action.',
+        'You are stronger than you think.',
+        'Every achievement starts with the decision to try.',
+        'Your potential is limitless.',
+        'Progress, not perfection, is the goal.',
+        'Shine your light, even when it’s hard.',
+        'Courage grows with every challenge you face.',
+        'You hold the key to your success.',
+        'Embrace the process, and the results will follow.',
+        'Inspiration is found within.',
+        'Celebrate the small victories—they lead to big ones.',
+        'Keep pushing, even when it gets tough.',
+        'Success is built one step at a time.',
+        'Believe in the magic of your ideas.',
+        'Hard work always pays off.',
+        'Be the change you wish to see.',
+        'Take pride in how far you’ve come.',
+        'Setbacks are just setups for comebacks.',
+        'You’re creating something amazing.',
+        'Stay motivated and focused on your goals.',
+        'Learn, grow, and keep moving forward.',
+        'You’re capable of incredible things.',
+        'Progress fuels passion—never give up.',
+        'Trust the process and trust yourself.',
+        'Keep dreaming big and working hard.',
+        'Your creativity is a gift to the world.',
+        'Keep building, and watch your dreams soar.'
+    ];
 
     /**
      * Ask the user if they want to star the repository on GitHub.
@@ -112,6 +154,15 @@ trait WithBasePackageTools
      */
     public function withEnd(): self
     {
+        if ($this->withEnd != null) {
+            $this->info($this->withEnd);
+            return $this;
+        }
+
+        if (count($this->withRandomEnd) >= 1) {
+            $this->withEnd = $this->withRandomEnd[array_rand($this->withRandomEnd)];
+        }
+
         $this->info($this->withEnd);
         return $this;
     }
