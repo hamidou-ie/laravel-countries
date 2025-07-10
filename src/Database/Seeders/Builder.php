@@ -27,14 +27,31 @@ class Builder
         return;
     }
 
+    protected static function getAvailableId(array $ignoreIds): int
+    {
+        $lastId = DB::table('lc_countries')->max('id') ?? 0;
+        $newId = $lastId + 1;
+
+        while (in_array($newId, $ignoreIds)) {
+            $newId++;
+        }
+
+        return $newId;
+    }
+
     protected static function builder(CountrySeeder $country)
     {
         DB::beginTransaction();
+
+        $ignoreIds = [70, 155, 199, 204, 244];
+
+        $customId = self::getAvailableId($ignoreIds);
 
         $region = CountryRegion::whereSlug($country->region, $country->lang)
             ->firstOrFail();
 
         $countryCreated = $region->countries()->create([
+            'id' => $customId,
             'capital' => $country->capital,
             'official_name' => $country->official_name,
             'iso_alpha_2' => $country->iso_alpha_2,
