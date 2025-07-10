@@ -29,19 +29,19 @@
         "Lucas Duarte"
     ],
     "require": {
-        "php": "^8.0|^8.1|^8.2",
-        "laravel/framework": "^10.0|^11.0|dev-master",
+        "php": "^8.2|^8.3",
+        "laravel/framework": "^10.48|^11.31|^12.0",
         "astrotomic/laravel-translatable": "^11.8",
-        "spatie/laravel-package-tools": "^1.16.0"
+        "spatie/laravel-package-tools": "1.92.*"
     },
     "require-dev": {
         "doctrine/dbal": "^3.0",
-        "laravel/legacy-factories": "^1.0.4",
-        "mockery/mockery": "^1.4",
-        "nunomaduro/termwind": "^2.1.0",
-        "orchestra/testbench": "^9.4",
-        "pestphp/pest": "^3.0",
-        "pestphp/pest-plugin-laravel": "^3.0"
+        "laravel/legacy-factories": "^1.4",
+        "mockery/mockery": "^1.6",
+        "nunomaduro/termwind": "^2.3.0",
+        "orchestra/testbench": "^9.12",
+        "pestphp/pest": "^3.7",
+        "pestphp/pest-plugin-laravel": "^3.1"
     },
     "autoload": {
         "psr-4": {
@@ -78,9 +78,9 @@
         },
         "compatibility": {
             "laravel": {
-                "current": "10.x, 11.x",
-                "planned": ["12.x", "13.x"],
-                "untested": ["12.x", "13.x"]
+                "current": "10.x, 11.x, 12.x",
+                "planned": ["13.x"],
+                "untested": ["13.x"]
             }
         },
         "language-management": {

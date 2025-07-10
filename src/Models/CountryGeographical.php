@@ -38,6 +38,20 @@ class CountryGeographical extends CountryModel
     ];
 
     /**
+     * The attributes that should be cast.
+     *
+     * This section is particularly important due to limitations introduced in Laravel 10.
+     * Laravel 10 requires specific handling of attributes to ensure proper type casting
+     * and avoid issues such as "Array to string conversion."
+     *
+     * @var array
+     */
+    protected $casts = [
+        'properties' => 'array',
+        'geometry' => 'array',
+    ];
+
+    /**
      * Get the attributes that should be cast.
      *
      * @return array<string, string>
